@@ -23,6 +23,6 @@ export default {
 
   }
 }
-</script>>
+</script>
 
 /*兄弟组件之间传值*/
