@@ -1,7 +1,5 @@
-# vue-dome
-
-> A vue project for test!
-
+# vue-tips
+记录一些vue使用中的小技巧-入门级
 ## Build Setup
 
 ``` bash
@@ -19,3 +17,4 @@ npm run build --report
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
