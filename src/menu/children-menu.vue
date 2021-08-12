@@ -9,7 +9,7 @@
         <Icon :type="item.icon" />
         <span>{{item.title}}</span>
       </MenuItem>
-      <ChildrenMenu v-else :key="item.key"/>
+      <ChildrenMenu v-else :key="item.key" :menuInfo="item" />
     </template>
   </SubMenu>
 </template>
@@ -21,7 +21,7 @@ export default {
   name: "ChildrenMenu",
   isSubMenu: true,
   components:{
-    Menu, Icon
+    Menu, Icon,
   },
   props:{
     ...Menu.SubMenu.Props,

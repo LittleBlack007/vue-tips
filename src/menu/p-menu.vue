@@ -3,10 +3,10 @@
     <Menu mode="inline" theme="light" :inline-collapsed="collapsed">
       <template v-for="item in list">
         <MenuItem v-if="!item.children" :key="item.key">
-          <Icon :type="icon" />
+          <Icon :type="item.icon" />
           <span>{{item.title}}</span>
         </MenuItem>
-        <ChildrenMenu v-else :key="item.key" :menu-info="item" />
+        <!-- <ChildrenMenu v-else :key="item.key" :menuInfo="item" /> -->
       </template>
     </Menu>
     <Row>
@@ -17,13 +17,13 @@
 
 <script>
 import {Menu,Button,Icon} from 'ant-design-vue';
-import ChildrenMenu from './children-menu.vue';
+//import ChildrenMenu from './children-menu.vue';
 
 export default {
-  name: 'Menu',
+  name: 'PMenu',
   components:{
     Menu,Button,Icon,
-    ChildrenMenu
+    //ChildrenMenu
   },
   data(){
     return {
@@ -38,14 +38,7 @@ export default {
           key: '2',
           title: 'Navigation 2',
           icon:'pie-chart',
-          children: [
-            {
-              key: '2.1',
-              title: 'Navigation 3',
-              icon:'mail',
-              children: [{ key: '2.1.1', title: 'Option 2.1.1' }],
-            },
-          ],
+          
         },
       ],
     }
