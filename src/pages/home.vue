@@ -7,7 +7,6 @@
 
 <script>
 import EventBus from './event-bus.vue';
-
 export default {
   name: 'Home',
   components:{

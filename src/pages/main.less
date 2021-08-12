@@ -1,0 +1,48 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: #f0f0f0;
+  overflow: hidden;
+}
+
+.header{
+  height: 45px;
+  background: rgb(238, 111, 153);
+  box-shadow: 0 2px 1px 1px rgba(100, 100, 100, .1);
+  position: relative;
+  z-index: 11;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  span{
+    font-size: 16px;
+  }
+}
+.content{
+  height: 100%;
+}
+.contain{
+  height: 100%;
+}
+
+.left-side-menu{
+  box-shadow: 4px 0 10px 0 rgba(29,35,41,.1);
+  background: #2f8aad;
+  height: 100%;
+  width: 201px;
+  top: 45px;
+  left: 0;
+  z-index: 21;
+  transition:'left .1s'
+}
+
+.right-side-content{
+  position: fixed;
+  top: 45px;
+  left: 200px;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  z-index: 1;
+}
