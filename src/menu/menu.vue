@@ -65,6 +65,6 @@ export default {
 
 <style lang="less" scoped>
   /deep/.menu{
-    width: 256px;
+    width: 201px;
   }
 </style>>

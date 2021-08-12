@@ -7,6 +7,7 @@
     </div>
     <div class="left-side-menu">123</div>
     <div class="right-side-content">
+      <Menu />
     </div>
     <footer>
       
@@ -15,12 +16,12 @@
 </template>
 
 <script>
-// import Menu from '../menu/menu.vue';
+import Menu from '../menu/menu.vue';
 
 export default {
   name: 'Main',
   components:{
-    // Menu
+    Menu
   },
   props:{
 

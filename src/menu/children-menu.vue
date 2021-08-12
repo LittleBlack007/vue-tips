@@ -4,7 +4,7 @@
       <Icon :type="menuInfo.icon" />
       <span>{{menuInfo.title}}</span>
     </span>
-    <template v-for="item in menuInfo">
+    <template v-for="item in menuInfo.children">
       <MenuItem :key="item.key" v-if="!item.children">
         <Icon :type="item.icon" />
         <span>{{item.title}}</span>
@@ -19,6 +19,7 @@ import {Menu, Icon} from 'ant-design-vue';
 
 export default {
   name: "ChildrenMenu",
+  isSubMenu: true,
   components:{
     Menu, Icon
   },
