@@ -1,15 +1,17 @@
 <template>
-  <SubMenu :key="menuInfo.key" v-bind="$props" v-on="$listeners">
+  <SubMenu :key="menuInfo.name" v-bind="$props" v-on="$listeners">
     <span slot="title">
-      <Icon :type="menuInfo.icon" />
-      <span>{{menuInfo.title}}</span>
+      <Icon :type="menuInfo.icon" v-if="menuInfo.icon" />
+      <span v-if="menuInfo.title">{{menuInfo.title}}</span>
+      <span v-else-if="menuInfo.name">{{menuInfo.name}}</span>
     </span>
     <template v-for="item in menuInfo.children">
-      <MenuItem v-if="!item.children" :key="item.key" >
-        <Icon :type="item.icon" />
-        <span>{{item.title}}</span>
+      <MenuItem v-if="!item.children" :key="item.name" >
+        <Icon :type="item.icon" v-if="item.icon" />
+        <span v-if="item.title">{{item.title}}</span>
+        <span v-else-if="item.name">{{item.name}}</span>
       </MenuItem>
-      <ChildrenMenu v-else :key="item.key" :menuInfo="item" />
+      <ChildrenMenu v-else :key="item.name" :menuInfo="item" />
     </template>
   </SubMenu>
 </template>

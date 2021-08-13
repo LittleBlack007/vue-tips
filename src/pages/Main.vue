@@ -6,9 +6,10 @@
       <img src="@/assets/header-right.jpg" :style="{transform: 'rotate('+ -angle +'deg)'}" />
     </div>
     <div class="left-side-menu" :style="{width: leftSideWidth +'px'}">
-      <PMenu :menuWidth="menuWidth" @toggleCollapsedWidth="toggleCollapsedWidth" />
+      <PMenu :menuWidth="menuWidth" @toggleCollapsedWidth="toggleCollapsedWidth" :list='list' />
     </div>
     <div class="right-side-content" :style="{left: leftSideWidth+'px'}">
+      <router-view/>
     </div>
     <footer>
       
@@ -18,19 +19,20 @@
 
 <script>
 import PMenu from '../menu/p-menu.vue';
+import rouetes from '../router/routes.js';
 
 export default {
   name: 'Main',
   components:{
     PMenu
   },
-  props:{
-  },
   data(){
     return {
+      tiemer: null,
       angle: 0,
       menuWidth: 210,
-      leftSideWidth: this.menuWidth
+      leftSideWidth: 210,
+      list: rouetes
     }
   },
   methods:{
@@ -39,7 +41,7 @@ export default {
     }
   },
   beforeMount(){
-    let timer = setInterval(() => {
+    this.timer = setInterval(() => {
       this.angle >= 360 ? this.angle = 10 : this.angle += 10 ;
     }, 50)
   },

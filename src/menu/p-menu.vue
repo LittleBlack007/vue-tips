@@ -2,11 +2,12 @@
   <div class="menu" >
     <Menu mode="inline" theme="light" :inline-collapsed="collapsed">
       <template v-for="item in list">
-        <MenuItem v-if="!item.children" :key="item.key" v-bind="$props" v-on="$listeners">
-          <Icon :type="item.icon" />
-          <span>{{item.title}}</span>
+        <MenuItem v-if="!item.children" :key="item.name" v-bind="$props" v-on="$listeners">
+          <Icon :type="item.icon" v-if="item.icon" />
+          <span v-if="item.title">{{item.title}}</span>
+          <span v-else-if="item.name">{{item.name}}</span>
         </MenuItem>
-        <ChildrenMenu v-else :key="item.key" :menuInfo="item" />
+        <ChildrenMenu v-else :key="item.name" :menuInfo="item" />
       </template>
     </Menu>
     <Row>
@@ -31,29 +32,15 @@ export default {
     menuWidth:{
       type: Number,
       default: 210
+    },
+    list:{
+      type: Array,
+      default: []
     }
   },
   data(){
     return {
       collapsed: false,
-      list: [
-        {
-          key: '1',
-          icon: 'mail',
-          title: 'Option 1',
-        },
-        {
-          key: '2',
-          title: 'Navigation 2',
-          children: [
-            {
-              key: '2.1',
-              title: 'Navigation 3',
-              children: [{ key: '2.1.1', title: 'Option 2.1.1' }],
-            },
-          ],
-        },
-      ],
     }
   },
   computed:{
@@ -74,6 +61,8 @@ export default {
 <style lang="less" scoped>
   /deep/.menu{
     height: 95%;
+    max-height: 95%;
+    overflow: hidden;
   }
   /deep/.ant-menu{
     opacity: .7;
