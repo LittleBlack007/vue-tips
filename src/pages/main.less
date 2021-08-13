@@ -8,7 +8,8 @@ body {
 
 .header{
   height: 45px;
-  background: rgb(238, 111, 153);
+  background: rgb(238, 111, 153);  /* 不支持线性的时候显示 */
+  background-image: linear-gradient(to bottom right, #ED7E68, pink);
   box-shadow: 0 2px 1px 1px rgba(100, 100, 100, .1);
   position: relative;
   z-index: 11;
@@ -17,6 +18,12 @@ body {
   justify-content: space-between;
   span{
     font-size: 16px;
+  }
+  img{
+    height: 45px;
+    -moz-border-radius: 45px;
+    -webkit-border-radius: 45px;
+    border-radius: 45px;
   }
 }
 .content{
@@ -27,22 +34,25 @@ body {
 }
 
 .left-side-menu{
+  position:fixed;
   box-shadow: 4px 0 10px 0 rgba(29,35,41,.1);
   background: #2f8aad;
+  background-image: linear-gradient(to bottom right, #2f8aad, #79DACB );
   height: 100%;
-  width: 201px;
+  width: 210px;
   top: 45px;
   left: 0;
   z-index: 21;
-  transition:'left .1s'
+  transition: left .1s
 }
 
 .right-side-content{
   position: fixed;
   top: 45px;
-  left: 200px;
+  //left: 200px;
   right: 0;
   bottom: 0;
   background-color: #fff;
   z-index: 1;
+  transition: left .1s
 }

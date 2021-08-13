@@ -1,13 +1,14 @@
 <template>
   <div class="contain">
     <div class="header">
-      <img style="height:45px" src="@/assets/header-left.jpg" />
-      <span>前端学习路程</span>
-      <img style="height:45px" src="@/assets/header-right.jpg" />
+      <img src="@/assets/header-left.jpg" :style="{transform: 'rotate('+ angle +'deg)'}" />
+      <span>Vue Tips For Green Men</span>
+      <img src="@/assets/header-right.jpg" :style="{transform: 'rotate('+ -angle +'deg)'}" />
     </div>
-    <div class="left-side-menu">123</div>
-    <div class="right-side-content">
-      <PMenu />
+    <div class="left-side-menu" :style="{width: leftSideWidth +'px'}">
+      <PMenu :menuWidth="menuWidth" @toggleCollapsedWidth="toggleCollapsedWidth" />
+    </div>
+    <div class="right-side-content" :style="{left: leftSideWidth+'px'}">
     </div>
     <footer>
       
@@ -24,8 +25,27 @@ export default {
     PMenu
   },
   props:{
-
   },
+  data(){
+    return {
+      angle: 0,
+      menuWidth: 210,
+      leftSideWidth: this.menuWidth
+    }
+  },
+  methods:{
+    toggleCollapsedWidth(leftSideWidth){
+      this.leftSideWidth = leftSideWidth;
+    }
+  },
+  beforeMount(){
+    let timer = setInterval(() => {
+      this.angle >= 360 ? this.angle = 10 : this.angle += 10 ;
+    }, 50)
+  },
+  destroyed(){
+    clearInterval(timer);
+  }
 }
 </script>
 

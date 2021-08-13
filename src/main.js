@@ -8,7 +8,7 @@ import less from 'less';
 export const eventBus = new Vue();  // 兄弟之间传值 on emit
 
 Vue.config.productionTip = false
-Vue.use(less)
+Vue.use(less);
 
 /* eslint-disable no-new */
 new Vue({
