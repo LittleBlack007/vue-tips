@@ -1,5 +1,5 @@
 <template>
-  <div class="menu" >
+    <div class="menu-list scroller" >
     <Menu mode="inline" theme="light" :inline-collapsed="collapsed">
       <template v-for="item in list">
         <MenuItem v-if="!item.children" :key="item.name" v-bind="$props" v-on="$listeners">
@@ -59,21 +59,39 @@ export default {
 </script>
 
 <style lang="less" scoped>
-  /deep/.menu{
-    height: 95%;
-    max-height: 95%;
+  .menu-list{
+    height: calc(95% - 28px);
+    max-height: calc(95% - 28px);
     overflow: hidden;
+    overflow-y: auto;
   }
   /deep/.ant-menu{
     opacity: .7;
     text-align: left;
   }
-  /deep/.collaspedBtn{
+  .collaspedBtn{
     opacity: .6;
     transition: width .1s;
     position: fixed;
     bottom: 0;
     left: 0;
     height: 30px;
+  }
+  .scroller::-webkit-scrollbar {  // 滚动条的宽度
+    width: 3px;
+    height: 3px;
+  }
+
+  .scroller::-webkit-scrollbar-track {  // 滚动条轨道
+      background-color:#F5F5F5;
+      -webkit-border-radius: 2em;
+      -moz-border-radius: 2em;
+      border-radius:2em;
+  }
+  .scroller::-webkit-scrollbar-thumb {  // 滚动条滑块
+      background-color:#c8c8c8;
+      -webkit-border-radius: 2em;
+      -moz-border-radius: 2em;
+      border-radius:2em;
   }
 </style>>
