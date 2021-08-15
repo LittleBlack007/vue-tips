@@ -1,13 +1,14 @@
 <template>
   <div>
+    <div><img src="../../../assets/logo.png"></div>
     <Comp1 :age="age" />
     <Comp2 :age="age" />
   </div>
 </template>
 
 <script>
-import Comp1 from '../components/comp1.vue';
-import Comp2 from '../components/comp2.vue';
+import Comp1 from './comp1.vue';
+import Comp2 from './comp2.vue';
 
 export default {
   name: 'EventBus',

@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import EventBus from './event-bus.vue';
+import EventBus from './vue-tips/event-bus/event-bus.vue';
 export default {
   name: 'Home',
   components:{

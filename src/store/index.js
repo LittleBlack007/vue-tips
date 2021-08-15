@@ -1,18 +1,18 @@
 import Vue from 'vue';
-import Vuex from 'vuex';
+import VueX from 'vuex';
 
-Vue.use(Vuex);
+Vue.use(VueX);
 
-const store = new Vuex.Store({
+const store = new VueX.Store({
   state: {
     isPlayed: false
   },
   mutations: {
     markVideoPlayed(state) {
       // 改变state
-      state.isPlayed = true;
+      state.isPlayed = false;
       // 设置storage
-      window.localStorage.isPlayed = JSON.stringify(true);
+      window.localStorage.isPlayed = JSON.stringify(state.isPlayed);
     },
     setPlayStatus(state, status) {
       state.isPlayed = status;
@@ -22,7 +22,7 @@ const store = new Vuex.Store({
     loadVideoStatus({ commit }) {
       //异步处理操作等
       let videoStatus = JSON.parse(window.localStorage.isPlayed);
-      commit('setPlayStates', videoStatus)
+      commit('setPlayStatus', videoStatus)
     }
   }
 })

@@ -1,6 +1,6 @@
 import Main from '../pages/Main.vue';
 import Home from '../pages/Home.vue';
-import EventBus from '../pages/event-bus.vue';
+import EventBus from '../pages/vue-tips/event-bus/event-bus.vue';
 import ChildrenRouterView from './children-router-view.vue';
 import { generateRoutes } from '../utils';
 
@@ -14,23 +14,30 @@ const routes = {
   children: [
     {
       path: '/home',
-      icon: 'mail',
+      icon: 'reddit',
       name: 'Home',
       title: '特效',
       component: Home
     },
     {
       path: '/vue-tips',
-      icon: 'mail',
+      icon: 'rocket',
       name: 'vue-tips',
       title: 'Vue技巧',
       children:[
         {
           path: '/vue-tips/event-bus',
-          icon: 'mail',
+          icon: 'team',
           name: 'event-bus',
           title: '兄弟传值',
           component: EventBus
+        },
+        {
+          path: '/vue-tips/vuex',
+          icon: 'dribbble',
+          name: 'vuex',
+          title: 'VueX',
+          component: () => import('../pages/vue-tips/vuex-demo.vue')
         }
       ]
     }

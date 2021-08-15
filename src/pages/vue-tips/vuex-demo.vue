@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>播放状态：{{ $store.state.isPlay }}</h1>
+    <h1>播放状态：{{ $store.state.isPlayed }}</h1>
     <Button @click="onClick">点击播放</Button>
   </div>
 </template>
@@ -9,17 +9,17 @@
 import {Button} from 'ant-design-vue';
 
 export default {
-  name: 'VueX',
+  name: 'VueXDemo',
   components:{
     Button,
   },
   methods:{
     onClick(){
-      this.$store.commit('markVideoPlayed');
+      this.$store.commit('markVideoPlayed',false);
     }
   },
   mounted(){
-    this.$store.dispach('loadVideoStatus')
+    this.$store.dispatch('loadVideoStatus');
   }
 
 }

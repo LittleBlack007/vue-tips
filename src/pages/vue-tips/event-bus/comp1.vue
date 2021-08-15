@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import {eventBus} from '../main.js';
+import {eventBus} from '../../../main.js';
 
 export default {
   name: 'Comp1', // 测试兄弟组件传值

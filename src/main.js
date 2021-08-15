@@ -3,7 +3,9 @@
 import Vue from 'vue';
 import App from './App';
 import router from './router';
+import store from './store';
 import less from 'less';
+
 
 export const eventBus = new Vue();  // 兄弟之间传值 on emit
 
@@ -14,6 +16,7 @@ Vue.use(less);
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
