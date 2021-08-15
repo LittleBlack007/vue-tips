@@ -7,9 +7,11 @@
     </span>
     <template v-for="item in menuInfo.children">
       <MenuItem v-if="!item.children" :key="item.name" >
+      <router-link :to="item.path"> 
         <Icon :type="item.icon" v-if="item.icon" />
         <span v-if="item.title">{{item.title}}</span>
         <span v-else-if="item.name">{{item.name}}</span>
+      </router-link>
       </MenuItem>
       <ChildrenMenu v-else :key="item.name" :menuInfo="item" />
     </template>

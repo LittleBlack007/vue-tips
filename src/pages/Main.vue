@@ -19,7 +19,7 @@
 
 <script>
 import PMenu from '../menu/p-menu.vue';
-import rouetes from '../router/routes.js';
+import mainRouetes from '../router/main-routes.js';
 
 export default {
   name: 'Main',
@@ -32,7 +32,7 @@ export default {
       angle: 0,
       menuWidth: 210,
       leftSideWidth: 210,
-      list: rouetes
+      list: mainRouetes.children
     }
   },
   methods:{
