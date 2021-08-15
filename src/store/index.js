@@ -10,7 +10,7 @@ const store = new VueX.Store({
   mutations: {
     markVideoPlayed(state) {
       // 改变state
-      state.isPlayed = false;
+      state.isPlayed = !state.isPlayed;
       // 设置storage
       window.localStorage.isPlayed = JSON.stringify(state.isPlayed);
     },

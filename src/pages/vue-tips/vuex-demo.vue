@@ -1,7 +1,8 @@
 <template>
   <div>
+    <div><img src="../../assets/logo.png"></div>
     <h1>播放状态：{{ $store.state.isPlayed }}</h1>
-    <Button @click="onClick">点击播放</Button>
+    <Button type="primary" @click="onClick">点击播放</Button>
   </div>
 </template>
 
@@ -15,7 +16,7 @@ export default {
   },
   methods:{
     onClick(){
-      this.$store.commit('markVideoPlayed',false);
+      this.$store.commit('markVideoPlayed');
     }
   },
   mounted(){

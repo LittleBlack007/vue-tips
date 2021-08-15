@@ -8,6 +8,9 @@
     <div class="left-side-menu" :style="{width: leftSideWidth +'px'}">
       <PMenu :menuWidth="menuWidth" @toggleCollapsedWidth="toggleCollapsedWidth" :list='list' />
     </div>
+    <!-- <div class="right-side-content1" :style="{left: leftSideWidth+'px'}">
+      <PinkSky />
+    </div> -->
     <div class="right-side-content" :style="{left: leftSideWidth+'px'}">
       <router-view/>
     </div>
@@ -20,11 +23,13 @@
 <script>
 import PMenu from '../menu/p-menu.vue';
 import mainRouetes from '../router/main-routes.js';
+//import PinkSky from './special-efficacy/pink-sky.vue';
 
 export default {
   name: 'Main',
   components:{
-    PMenu
+    PMenu,
+    // PinkSky
   },
   data(){
     return {
