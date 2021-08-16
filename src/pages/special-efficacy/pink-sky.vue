@@ -82,5 +82,4 @@ export default {
   top: 0;
   backface-visibility: hidden;
 }
-
 </style>
