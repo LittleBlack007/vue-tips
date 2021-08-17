@@ -1,5 +1,5 @@
 <template>
-  <div v-loading="loading">
+  <div v-loading="loading" class="test-loading">
     <Row :gutter="3">
       <Col v-for="item in list" :key="item" class="col-outside" v-bind="colPhone" >
         <Card hoverable style="width: 240px">
@@ -52,7 +52,7 @@ export default {
   },
   mounted(){
     setTimeout(() => {  // 模拟后台获取数据
-      this.list = [1,2,3,4,5,6,7,8,9,10];
+      this.list = []//[1,2,3,4,5,6,7,8,9,10];
     },2000)
   }
 }
@@ -61,5 +61,9 @@ export default {
 <style lang="less" scoped>
   .col-outside{
     margin-top: 10px;
+  }
+  .test-loading{
+    width:100%;
+    height: 500px;
   }
 </style>
