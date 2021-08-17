@@ -14,7 +14,8 @@ export default {
   },
   data(){
     return {
-
+      count: 100,
+      a: this.count === 100 ? '是的' : '不是',
     }
   },
   methods:{

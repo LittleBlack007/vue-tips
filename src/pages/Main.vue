@@ -11,7 +11,7 @@
     <div class="right-side-content1">
       <PinkSky />
     </div>
-    <div class="right-side-content" :style="{left: leftSideWidth+'px'}">
+    <div class="right-side-content scroller" :style="{left: leftSideWidth+'px'}">
       <router-view/>
     </div>
     <footer>

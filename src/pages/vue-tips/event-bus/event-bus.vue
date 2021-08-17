@@ -17,7 +17,7 @@ export default {
   },
   data(){
     return {
-      age: 20
+      age: 20,
     }
   },
   methods:{

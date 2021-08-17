@@ -15,7 +15,6 @@ export default {
     };
   },
   mounted() {
-    console.log(this.$refs.starsRef.value);
     let starNodes = Array.from(this.$refs.starsRef.children);
     starNodes.forEach((item) => {
       let speed = 0.2 + Math.random() * 1;

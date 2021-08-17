@@ -11,7 +11,7 @@ import loadingDirective from './utils/loading.js';
 export const eventBus = new Vue();  // 兄弟之间传值 on emit
 
 Vue.config.productionTip = false
-Vue.directive(loadingDirective);
+Vue.directive('loading',loadingDirective);
 Vue.use(less);
 
 /* eslint-disable no-new */

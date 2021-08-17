@@ -53,7 +53,13 @@ const routes = {
           title: 'VueX',
           component: () => import('../pages/vue-tips/vuex-demo.vue')
         },
-        
+        {
+          path: '/vue-tips/loading',
+          icon: 'dribbble',
+          name: 'loading',
+          title: 'Loading指令',
+          component: () => import('../pages/vue-tips/test-loading.vue')
+        }
       ]
     }
   ]
