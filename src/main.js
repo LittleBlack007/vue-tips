@@ -6,6 +6,7 @@ import router from './router';
 import store from './store';
 import less from 'less';
 import loadingDirective from './utils/loading.js';
+import {Spin} from 'ant-design-vue';
 
 
 export const eventBus = new Vue();  // 兄弟之间传值 on emit
@@ -13,6 +14,7 @@ export const eventBus = new Vue();  // 兄弟之间传值 on emit
 Vue.config.productionTip = false
 Vue.directive('loading',loadingDirective);
 Vue.use(less);
+Vue.use(Spin);
 
 /* eslint-disable no-new */
 new Vue({

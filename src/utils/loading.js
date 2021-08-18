@@ -18,7 +18,9 @@ const loadingDiretive = {
 }
 
 function insertDom(el){
-  el.appendChild(el.instance.$el)
+  // el.appendChild(el.instance.$el)
+  el.insertAdjacentHTML("beforeBegin", "<Spin>");
+  el.insertAdjacentHTML("afterend","</Spin>");
 }
 
 export default loadingDiretive;
