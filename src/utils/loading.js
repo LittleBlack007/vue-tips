@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import PLoading from '../components/p-loading.vue';
+import {Spin} from 'ant-design-vue';
 
 const loadingDiretive = {
   inserted(el,binding){  // el 为dom节点；  binding 为绑定的值
@@ -10,6 +11,9 @@ const loadingDiretive = {
     console.log('loadingCtor',loadingCtor);
     console.log('loadingComp',loadingComp);
     console.log('pLoadingDom',pLoadingDom.$el);
+    const spinCtor = Vue.extend(Spin);
+
+    console.log('Spin', new spinCtor().$mount().$el)
     el.instance = loadingComp;
     if(binding.value){
       insertDom(el);
