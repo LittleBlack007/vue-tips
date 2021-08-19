@@ -18,13 +18,27 @@ const loadingDiretive = {
     if(binding.value){
       insertDom(el);
     }
+  },
+  update(el,binding){
+    console.log(binding)
+    if(binding.oldValue !== binding.value){
+      if(binding.value){
+        insertDom(el);
+      }else{
+        removeDom(el);
+      }
+    }
   }
 }
 
 function insertDom(el){
-  // el.appendChild(el.instance.$el)
-  el.insertAdjacentHTML("beforeBegin", "<Spin>");
-  el.insertAdjacentHTML("afterend","</Spin>");
+  el.appendChild(el.instance.$el)
+  //el.insertAdjacentHTML("beforeBegin", "<Spin>");
+  //el.insertAdjacentHTML("afterend","</Spin>");
+}
+
+function removeDom(el){
+  el.removeChild(el.instance.$el)
 }
 
 export default loadingDiretive;

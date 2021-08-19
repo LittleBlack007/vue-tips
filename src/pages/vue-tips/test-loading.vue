@@ -35,7 +35,7 @@ export default {
   },
   computed:{
     loading(){
-      return !this.data.length;
+      return !this.list.length;
     }
   },
   data(){

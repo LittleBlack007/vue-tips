@@ -8,9 +8,9 @@
     <div class="left-side-menu" :style="{width: leftSideWidth +'px'}">
       <PMenu :menuWidth="menuWidth" @toggleCollapsedWidth="toggleCollapsedWidth" :list='list' />
     </div>
-    <div class="right-side-content1">
+    <!-- <div class="right-side-content1">
       <PinkSky />
-    </div>
+    </div> -->
     <div class="right-side-content scroller" :style="{left: leftSideWidth+'px'}">
       <router-view/>
     </div>

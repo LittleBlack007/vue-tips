@@ -18,5 +18,14 @@ export default {
   .container-spin{
     width: 100%;
     height: 100%;
+    position: absolute;
+    top: 0;
+  }
+  .ant-spin-spinning{
+   width: 100%;
+   height: 100%; 
+   display: flex;
+   align-items: center;
+   justify-content: center;
   }
 </style>
