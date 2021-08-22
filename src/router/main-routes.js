@@ -13,14 +13,15 @@ const routes = {
   children: [
     {
       path: '/home',
+      icon: 'home',
       name: 'Home',
       title: '主页',
       component: () => import('../pages/home.vue')
     },
     {
-      path: '/function-menu',
+      path: '/special-efficacy',
       icon: 'reddit',
-      name: 'Home',
+      name: 'special-efficacy',
       title: '特效',
       children:[
         {

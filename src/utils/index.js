@@ -9,3 +9,13 @@ export const generateRoutes = (routes,routerView) => {  // 为有children的嵌�
   }
   return routes;
 }
+
+export function debounce(func, delay){
+  let timer = null;
+  return function(...arg){
+    timer ? clearTimeout(timer) : null;
+    timer = setTimeout(() => {
+      func.apply(this,arg);
+    }, delay);
+  }
+}
