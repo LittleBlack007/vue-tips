@@ -1,7 +1,6 @@
 <template>
   <div>
     <div><img src="../assets/logo.png"></div>
-    <EventBus />
   </div>
 </template>
 

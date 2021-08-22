@@ -13,6 +13,12 @@ const routes = {
   children: [
     {
       path: '/home',
+      name: 'Home',
+      title: '主页',
+      component: () => import('../pages/home.vue')
+    },
+    {
+      path: '/function-menu',
       icon: 'reddit',
       name: 'Home',
       title: '特效',

@@ -50,7 +50,9 @@ export default {
     }
   },
   mounted(){
-    this.headerWidth = document.getElementById("header").offsetWidth;    //宽度
+    this.$nextTick(() => {
+      this.headerWidth = document.getElementById("header").offsetWidth;    //宽度
+    })
     window.onresize = () => {
       return (() => {
         this.headerWidth = document.getElementById("header").offsetWidth; 
