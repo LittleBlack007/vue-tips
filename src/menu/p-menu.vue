@@ -1,5 +1,5 @@
 <template>
-    <div class="menu-list scroller" >
+    <div class="menu-list" >
     <Menu 
       mode="inline" 
       theme="light" 
@@ -71,7 +71,7 @@ export default {
       this.$emit('toggleCollapsedWidth',width);
     },
     onOpenChange (openKeys) {
-      console.log("openKeys",openKeys);
+      //console.log("openKeys",openKeys);
     // 当菜单被展开时触发此处
       /* 
       经测试传入的变量openKeys是数组 点击已经展开的菜单时传入的是空数组
@@ -87,14 +87,14 @@ export default {
       }
     },
     getOpenKeyArr(list,path,openKeyArr){  // 通过path查找父级菜单  只考虑一个展开的情况
-      console.log(list,path,openKeyArr)
+      //console.log(list,path,openKeyArr)
       list.map(i => {
         if(i.children && i.children.length >= 1){
           let key = i.path;
           for(let ic of i.children){
-            console.log(ic);
+            //console.log(ic);
             if(ic.path === path){
-              console.log(ic)
+              //console.log(ic)
               openKeyArr.push(key)
             }
             if(ic.children && ic.children.length >= 1){
@@ -133,22 +133,5 @@ export default {
     bottom: 0;
     left: 0;
     height: 30px;
-  }
-  .scroller::-webkit-scrollbar {  // 滚动条的宽度
-    width: 3px;
-    height: 3px;
-  }
-
-  .scroller::-webkit-scrollbar-track {  // 滚动条轨道
-      background-color:#F5F5F5;
-      -webkit-border-radius: 2em;
-      -moz-border-radius: 2em;
-      border-radius:2em;
-  }
-  .scroller::-webkit-scrollbar-thumb {  // 滚动条滑块
-      background-color:#c8c8c8;
-      -webkit-border-radius: 2em;
-      -moz-border-radius: 2em;
-      border-radius:2em;
   }
 </style>>

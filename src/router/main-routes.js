@@ -66,6 +66,13 @@ const routes = {
           name: 'loading',
           title: 'Loading指令',
           component: () => import('../pages/vue-tips/test-loading.vue')
+        },
+        {
+          path: '/vue-tips/lazy-loading',
+          icon: 'dribbble',
+          name: 'lazy-loading',
+          title: '懒加载指令',
+          component: () => import('../pages/vue-tips/img-lazy/img-lazy.vue')
         }
       ]
     }
