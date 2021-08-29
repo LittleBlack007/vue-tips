@@ -1,16 +1,26 @@
 <template>
-  <div class="container" ref="container" v-loading="loading" @scroll="scrollEvent">
-     <ul>
-        <li v-for="(image, idx) in images" :key="image.id">
-          <img v-lazy:[container]="image.cover"  alt=""  :data-id="idx" :height="160" />
-  		  </li>
-  	 </ul>
-  </div>
+  <Row class="container" @scroll.native="scrollEvent">
+    <Col :span="12" v-loading="loading" style="height: 100%">
+      <ul>
+          <li v-for="(image, idx) in images" :key="image.id">
+            <img v-mylazy:[container]="image.cover"  alt=""  :data-id="idx" :height="160" />
+          </li>
+      </ul>
+    </Col>
+    <Col :span="12">
+      <ul>
+          <li v-for="image in images" :key="image.id">
+            <img v-lazy="image.cover"  alt="" />
+          </li>
+      </ul>
+    </Col>
+  </Row>
 </template>
 
 <script>
 import data from './mock.js';
 import lazyEventBus from '@/utils/lazy-loading/lazy-event-bus.js';
+import {Row,Col} from 'ant-design-vue';
 
 export default {
   name: "ImgLazy",
@@ -20,6 +30,9 @@ export default {
       container: 'container' //图片容器的className
     }
   },
+  components:{
+    Row,Col
+  },
   computed:{
     loading(){
       return !this.images.length
@@ -27,7 +40,8 @@ export default {
   },
   methods:{
     scrollEvent(e){
-      lazyEventBus.$emit("iscroll", this.$refs.container);
+      console.log('我滚了')
+      lazyEventBus.$emit("iscroll");
     }
   },
   created(){
@@ -48,3 +62,7 @@ export default {
     }
   }
 </style>
+
+遇到的问题主要是：
+1,img标签要给定高度
+2，最外层要给定高度
