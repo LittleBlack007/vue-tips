@@ -1,7 +1,7 @@
 <template>
   <div v-loading="loading" class="test-loading">
     <Row :gutter="3">
-      <Col v-for="item in list" :key="item" class="col-outside" v-bind="colPhone" >
+      <Col v-for="item,i in list" :key="i" class="col-outside" v-bind="colPhone" >
         <Card hoverable style="width: 100%">
           <img
             slot="cover"

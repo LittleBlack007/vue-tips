@@ -57,6 +57,7 @@ function loadImg(img){
   }
   image.src = src;  // 真实地址
   console.log('加载了', el.dataset.id);
+  console.log(imgs)
   deleteImg(el);  // 加载了的图片，需要将其从待加载的imgs中清除
 }
 
