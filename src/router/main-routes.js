@@ -73,9 +73,15 @@ const routes = {
           name: 'lazy-loading',
           title: '懒加载指令',
           component: () => import('../pages/vue-tips/img-lazy/img-lazy.vue')
-        },
-
+        }
       ]
+    },
+    {
+      path: '/test',
+      icon: 'rocket',
+      name: 'test',
+      title: '测试',
+      component: () => import('@/pages/other/form.vue')
     }
   ]
 }
