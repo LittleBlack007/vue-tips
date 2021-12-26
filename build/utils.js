@@ -18,14 +18,23 @@ exports.cssLoaders = function (options) {
   const cssLoader = {
     loader: 'css-loader',
     options: {
-      sourceMap: options.sourceMap
-    }
+      sourceMap: options.sourceMap,
+      // modules: {
+      //   //mode: 'local', // 设置 local 启用 global 禁用 css 模块
+      //   // exportGlobals: true,
+      //   localIdentName: '[path][name]__[local]--[hash:base64:5]', // 编译后的类名
+      //   //context: path.resolve(__dirname, 'src'),
+      //   hashPrefix: 'my-custom-hash',
+      // },
+    },
+    
   }
 
   const postcssLoader = {
     loader: 'postcss-loader',
     options: {
-      sourceMap: options.sourceMap
+      sourceMap: options.sourceMap,
+      
     }
   }
 

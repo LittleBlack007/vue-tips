@@ -19,9 +19,25 @@ export default {
     }
   },
   created(){
+    console.log('子节点-demo-created')
     eventBus.$on('add-age', age => {
       this.ageData = age;
     })
+  },
+  mounted () {
+    console.log('子节点-demo-mounted')
+  },
+  activated () {
+     console.log('子节点-demo-activated')
+  },
+  deactivated () {
+    console.log('子节点-demo-deactivated')
+  },
+  beforeDestroy () {
+    console.log('子节点-demo-beforeDestroy')
+  },
+  destroyed () {
+    console.log('子节点-demo-destroyed')
   }
 }
 </script>

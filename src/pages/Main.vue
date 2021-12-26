@@ -12,9 +12,9 @@
       <PinkSky />
     </div> -->
     <div class="right-side-content scroller" :style="{left: leftSideWidth+'px'}">
-      <!-- <keep-alive> -->
+      <keep-alive>
         <router-view/>
-      <!-- </keep-alive> -->
+      </keep-alive>
     </div>
     <footer>
       

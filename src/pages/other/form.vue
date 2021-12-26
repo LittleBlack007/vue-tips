@@ -30,23 +30,49 @@
           </FormItem>
         </Col>
       </Row>
+      <Row>
+        <FormItem label="附件">
+          <Dragger
+          v-decorator="[
+            'dragger',
+            {
+              valuePropName: 'fileList',
+              getValueFromEvent: normFile,
+            },
+          ]"
+          name="files"
+          :customRequest="customRequest"
+        >
+          <p class="ant-upload-drag-icon">
+            <Icon type="inbox" />
+          </p>
+          <p class="ant-upload-text">
+            Click or drag file to this area to upload
+          </p>
+          <p class="ant-upload-hint">
+            Support for a single or bulk upload.
+          </p>
+        </Dragger>
+        </FormItem>
+      </Row>
     </Form>
     <Button type="primary" @click="handleSubmit">提交</Button>
   </div>
 </template>
 
 <script>
-import {Form, Select, Input, Row, Col, Button} from 'ant-design-vue';
+import {Form, Select, Input, Row, Col, Button, Upload, Icon} from 'ant-design-vue';
 
 const FormItem = Form.Item;
 const Option = Select.Option;
+const Dragger = Upload.Dragger
 
 export default {
   name: 'myForm',
   components:{
     Form,FormItem,
     Select,Option,Input,
-    Row,Col
+    Row,Col,Dragger,Button,Icon
   },
   data(){
     return {
@@ -54,7 +80,22 @@ export default {
     }
   },
   methods:{
+    customRequest(file){
+      file.Success = 20;
+      setTimeout(() =>{
+        file.percent = 100;
+      },2000)
+    },
+    normFile(e) {
+      console.log('Upload event:', e);
+      if (Array.isArray(e)) {
+        return e;
+      }
+      return e && e.fileList;
+      //return [{name:123,uid: new Date().getTime()}];
+    },
     handleSubmit(e) {
+      this.form.setFieldsValue({dragger: [{name:123,uid: new Date().getTime()}]})
       e.preventDefault();
       this.form.validateFields().then(res => {
         console.log(res)
