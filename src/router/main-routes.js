@@ -73,6 +73,13 @@ const routes = {
           name: 'lazy-loading',
           title: '懒加载指令',
           component: () => import('../pages/vue-tips/img-lazy/img-lazy.vue')
+        },
+        {
+          path: '/vue-tips/infinite-scroll-fixed-height',
+          icon: 'dribbble',
+          name: 'lazy-loading',
+          title: '固高虚拟列表',
+          component: () => import('../pages/vue-tips/infinite-scroll-fixed-height')
         }
       ]
     },
